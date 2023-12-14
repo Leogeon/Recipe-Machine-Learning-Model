@@ -1,7 +1,10 @@
 # RecipeAnalysis
 **Authors**: [Wenbin Jiang](https://github.com/Leogeon), [Jevan Chahal](https://github.com/JevanC)
 
-## Table of Contents
+## Exploratory Data:
+- Here is our exploratory data analysis on this dataset: [Recipe Analysis](https://leogeon.github.io/RecipeAnalysis/)
+  
+## Table of Contents:
 - [Framing the Problem](#framingtheproblem)
 - [Baseline Model](#baselinemodel)
 - [Final Model](#finalmodel)
@@ -14,7 +17,7 @@
 
 ### Response Variable:
 - **Variable:** Sugar content (measured quantitatively)
-- **Reason for Choice:** For our response variable we decided to chose sugar. The reason for this is that sugar is the most important nutritional component and being able to accurately predict the level of sugar in a recipe is very beneficial. From a health and safety standpoint, many people are faced with diabetes, and for such people, knowing the exact sugar content of food can be the difference between life and death. 
+- **Reason for Choice:** For our response variable we decided to choose sugar. The reason for this is that sugar is the most important nutritional component and being able to accurately predict the level of sugar in a recipe is very beneficial. From a health and safety standpoint, many people are faced with diabetes, and for such people, knowing the exact sugar content of food can be the difference between life and death. 
   
 ### Evaluation Metrics:
 - **Root Mean Square Error (RMSE):**
