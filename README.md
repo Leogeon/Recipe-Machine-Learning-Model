@@ -150,4 +150,4 @@ The final model's performance, assessed through training and testing data, along
 - **p-value:** 0.0
 
 ### Conclusion:
-Reject the null hypothesis at a significance level of 0.05. Indicating a statistically significant difference in model performance between High Calorie and Low Calorie groups, suggesting potential fairness concerns. This kind of makes sense since we can assume high calorie group and low calorie group have different nutritional content. Higher calorie groups usually contain higher amount of sugar contents (milkshake vs salad).
+Reject the null hypothesis at a significance level of 0.05. Indicating a statistically significant difference in model performance between High Calorie and Low-Calorie groups, suggesting potential fairness concerns. This kind of makes sense since we can assume the high-calorie group and the low-calorie group have different nutritional content. Higher calorie groups usually contain higher amounts of sugar content (milkshake vs salad).
