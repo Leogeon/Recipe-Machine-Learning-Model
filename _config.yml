@@ -5,4 +5,4 @@ plugins:
 gem "github-pages", group: :jekyll_plugins
 
 title: [Recipe Minutes Prediction]
-description: [The purpose of project is to train a model and predict the minutes of a recipe based on given features]
+description: [The purpose of project is to train a model and predict the sugar content of a recipe based on given features]
