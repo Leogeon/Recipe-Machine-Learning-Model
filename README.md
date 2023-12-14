@@ -14,7 +14,7 @@
 
 ### Response Variable:
 - **Variable:** Sugar content (measured quantitatively)
-- **Reason for Choice:** You chose 'sugar' as the response variable to predict its value based on other nutritional information like calories, total fat, sodium, protein, saturated fat, and carbohydrates. This choice makes sense if the goal is to understand or manage sugar levels in dietary planning, which is a significant consideration in nutrition and health-related fields.
+- **Reason for Choice:** We chose 'sugar' as the response variable to predict its value based on other nutritional information like calories, total fat, sodium, protein, saturated fat, and carbohydrates. This choice makes sense if the goal is to understand or manage sugar levels in dietary planning, which is a significant consideration in nutrition and health-related fields.
   
 ### Evaluation Metrics:
 - **Root Mean Square Error (RMSE):**
@@ -115,7 +115,7 @@ The final model's performance, assessed through training and testing data, along
 ### Significance of the Improvements:
 
 - **Root Mean Square Error (RMSE):** The final model achieved an RMSE of approximately 99.98 on the training set and 99.94 on the testing set. This is an improvement compared to the RMSE from the baseline model. A lower RMSE indicates that the model's predictions are, on average, closer to the actual sugar values.
-- **R² Score:** The R² stayed the same consistenly but it is still a relatively score, indicating a good fit to the data.
+- **R² Score:** The R² stayed the same consistenly but it is still a relatively good score, indicating a good fit to the data.
   
 ### Significance of the Improvements:
 - **Model Accuracy:** The decrease in RMSE suggests that the final model is more accurate in its predictions.
@@ -143,4 +143,4 @@ The final model's performance, assessed through training and testing data, along
 - **p-value:** 0.0
 
 ### Conclusion:
-Reject the null hypothesis at a significance level of 0.05. Indicating a statistically significant difference in model performance between High Calorie and Low Calorie groups, suggesting potential fairness concerns.
+Reject the null hypothesis at a significance level of 0.05. Indicating a statistically significant difference in model performance between High Calorie and Low Calorie groups, suggesting potential fairness concerns. This kind of makes sense since we can assume high calorie group and low calorie group have different nutritional content. Higher calorie groups usually contain higher amount of sugar contents (milkshake vs salad).
