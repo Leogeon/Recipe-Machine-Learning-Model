@@ -97,24 +97,25 @@ The improvement in the model's performance is evidenced by the decrease in RMSE 
 - **Model Fit:** The increase in R² indicates a better fit to the data, meaning the model is more effective at capturing the underlying relationships between the variables.
 - **Impact of Hyperparameter Tuning and Feature Engineering:** The improvements in these metrics also underscore the effectiveness of your hyperparameter tuning with GridSearchCV and the introduction of new features. The combination of these techniques likely helped in capturing more complex relationships in the data, which were not possible with the baseline model.
   
-### Significance of the Improvements: <a name="framingtheproblem"></a>
-# Choice of Groups X and Y:
-- **Group X:** High Calorie Group (recipes with calories greater than the median)
-- **Group Y:** Low Calorie Group (recipes with calories less than or equal to the median)
-  
-# Evaluation Metric:
-- **Metric Used:** Mean Squared Error (MSE) for regression
-- **Null and Alternative Hypotheses:**
-  - **Null Hypothesis (H0):** The model is fair. The MSE for the High Calorie Group and the Low Calorie Group are roughly the same, and any observed differences are due to random chance.
-  - **Alternative Hypothesis** (H1): The model is unfair. The MSE for the High Calorie Group is significantly different from the MSE for the Low Calorie Group.
+## Fairness Analysis <a name="fairness-analysis"></a>
+### Choice of Groups X and Y:
+- **Group X:** High Calorie Group (recipes with calories above median)
+- **Group Y:** Low Calorie Group (recipes with calories at or below median)
 
-# Test Statistic and Significance Level:
-Test Statistic: Difference in MSE between the High Calorie Group and the Low Calorie Group
-Significance Level: Typically, a significance level of 0.05 is used, but it's not explicitly mentioned here.
+### Evaluation Metric:
+- **Metric Used:** Mean Squared Error (MSE)
 
-# Permutation Test Result:
+### Null and Alternative Hypotheses:
+- **Null Hypothesis (H0):** Model is fair, MSE for both groups are similar.
+- **Alternative Hypothesis (H1):** Model is unfair, significant difference in MSE between groups.
+
+### Test Statistic and Significance Level:
+- **Test Statistic:** Difference in MSE between groups.
+- **Significance Level:** Typically 0.05.
+
+### Permutation Test Result:
 - **Observed Mean Difference:** 20071.233871398035
 - **p-value:** 0.0
-  
-# Conclusion:
-Given the observed mean difference in MSE between the two groups and a p-value of 0.0, we reject the null hypothesis at a conventional significance level (e.g., 0.05). This result suggests that there is a statistically significant difference in the performance of the model between the High Calorie and Low Calorie groups. In other words, the model appears to perform differently for these two groups, which could indicate a lack of fairness in this context.
+
+### Conclusion:
+Reject the null hypothesis at a significance level of 0.05. Indicating a statistically significant difference in model performance between High Calorie and Low Calorie groups, suggesting potential fairness concerns.
