@@ -55,8 +55,8 @@ The performance of the model was assessed using the Mean Squared Error (MSE) and
 
 | Metric        | Training Results            | Testing Results             |
 | ------------- | --------------------------- | --------------------------- |
-| MSE           | 104.25403968307991          | 103.36639478213773          |
-| R² Score      | 0.7736527230149925          | 0.7736527230149925          |
+| MSE           | 102.63865766316138          | 110.07593549277638          |
+| R² Score      | 0.7571468808446675          | 0.75714688084466755          |
 
 | CV Fold       | Score                       |
 | ------------- | --------------------------- |
@@ -66,8 +66,8 @@ The performance of the model was assessed using the Mean Squared Error (MSE) and
 | 4             | 0.70509366                  |
 | 5             | 0.74905523                  |
 
-- **Root Mean Square Error (RMSE):** The RMSE is approximately 104.25 and 103.36 for testing. This value indicates the standard deviation of the prediction errors or residuals. A lower RMSE is generally better, but since this is only the baseline model, we decided to proceed with it.
-- **R² Score:** The R² score for training is about 0.773, and for testing, it is approximately 0.773. This score suggests that a significant proportion of the variance in the sugar content is explained by the model, indicating a good fit to the data.
+- **Root Mean Square Error (RMSE):** The RMSE is approximately 102.63 and 110.07 for testing. This value indicates the standard deviation of the prediction errors or residuals. A lower RMSE is generally better, but since this is only the baseline model, we decided to proceed with it.
+- **R² Score:** The R² score for training is about 0.757, and for testing, it is approximately 0.757. This score suggests that a significant proportion of the variance in the sugar content is explained by the model, indicating a good fit to the data.
 - **Cross-Validation Scores:** The scores range from approximately 0.671 to 0.773. This variation indicates some fluctuation in the model's performance across different data subsets, but the scores are relatively consistent. The model does not show signs of overfitting and should generalize well to new, unseen data.
 
 ## Final Model <a name="finalmodel"></a>
@@ -77,6 +77,10 @@ In this section, we refined our model by adding new features and employing Lasso
   - **Rationale:** More ingredients could indicate a higher likelihood of containing sweeteners, thus affecting the sugar content.
 - **Number of Steps (n_steps):**
   - **Rationale:** A greater number of steps may correlate with recipe complexity, potentially impacting sugar content through various cooking processes.
+- **Number of Minutes (minutes):**
+  - **Rationale:** Longer preparation times, typical in baking, might correlate with sugar-rich foods like desserts.
+- **Calories Squared (calories_squared):**
+  - **Rationale:** To capture non-linear relationships between calories and sugar content.
     
 ### Modeling Algorithm and Hyperparameters:
 - **Algorithm:** Lasso Regression (Least Absolute Shrinkage and Selection Operator).
@@ -86,12 +90,12 @@ In this section, we refined our model by adding new features and employing Lasso
 ### Improvement Over Baseline Model:
 The final model introduces Lasso regression and additional features, which are expected to enhance prediction accuracy and model interpretability:
 - **Final Model:** The final model, with Lasso regression and the added features, likely performs better due to several reasons:
-  - **Regularization:** Lasso regression helps in preventing overfitting and allows for feature selection.
-  - **Feature Selection:** By shrinking less important feature coefficients to zero.
+  - **Regularization:** Reduces overfitting and selectively shrinks less critical features to zero.
+  - **Feature Selection:**  New features enhance the model's ability to capture complex patterns in the data.
   - **Customized Data Transformation:** Employing a ColumnTransformer for tailored preprocessing.
     
 ### Performance Metrics:
-The improvement in the model's performance is evidenced by the decrease in RMSE (Root Mean Square Error) and the increase in the R² score from the baseline to the final model. A lower RMSE indicates better prediction accuracy, while a higher R² score indicates that a greater proportion of variance in the dependent variable is explained by the independent variables in the model.
+The model's performance is showcased by a slight reduction in the reduction in RMSE and slight increase of the R² score, suggesting improved prediction accuracy and model.
 
 ### Best Parameters:
 - **Alpha for Lasso Regression:** The best alpha parameter found is 0.1. In Lasso regression, alpha is the parameter that controls the strength of the regularization. A smaller alpha value means less regularization and a value closer to linear regression. The optimal alpha value of 0.1 suggests that some regularization is beneficial for the model, but not too much, which balances between model complexity and the risk of overfitting.
@@ -101,8 +105,8 @@ The final model's performance, assessed through training and testing data, along
 
 | Metric        | Training Results            | Testing Results             |
 | ------------- | --------------------------- | --------------------------- |
-| MSE           | 99.9886615505347            | 99.94504019748456           |
-| R² Score      | 0.7705268501389303          | 0.7883886149389354          |
+| RMSE           | 99.81431897766402           | 107.0671157234895           |
+| R² Score      | 0.7677415984965867          | 0.7702417458530844          |
 
 | CV Fold       | Score                       |
 | ------------- | --------------------------- |
@@ -114,12 +118,12 @@ The final model's performance, assessed through training and testing data, along
 
 ### Significance of the Improvements:
 
-- **Root Mean Square Error (RMSE):** The final model achieved an RMSE of approximately 99.98 on the training set and 99.94 on the testing set. This is an improvement compared to the RMSE from the baseline model. A lower RMSE indicates that the model's predictions are, on average, closer to the actual sugar values.
-- **R² Score:** The R² stayed the same consistenly but it is still a relatively good score, indicating a good fit to the data.
+- **Root Mean Square Error (RMSE):** The final model achieved an RMSE of approximately 99.98 on the training set and 107.06 on the testing set. While it is a small difference, it is still an improvement compared to the RMSE. A lower RMSE indicates that the model's predictions are, on average, closer to the actual sugar values.
+- **R² Score:** Simiarly, the R² saw a small improvement but it is still a relatively good score, indicating a good fit to the data.
   
 ### Significance of the Improvements:
-- **Model Accuracy:** The decrease in RMSE suggests that the final model is more accurate in its predictions.
-- **Model Fit:** The R² stayed consistenly the same as base model, meaning the model is still a good fit for the data.
+- **Model Accuracy:** The decrease in RMSE suggests that the final model is a bit more accurate in its predictions.
+- **Model Fit:** The R² score improved a bit as well, meaning the model a better fit for the data.
 - **Impact of Hyperparameter Tuning and Feature Engineering:** The improvements in these metrics also underscore the effectiveness of our hyperparameter tuning with GridSearchCV and the introduction of new features. The combination of these techniques likely helped in capturing more complex relationships in the data, which were not possible with the baseline model.
   
 ## Fairness Analysis <a name="fairness-analysis"></a>
