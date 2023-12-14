@@ -8,6 +8,22 @@
 - [Fairness Analysis](#fairnessanalysis)
 
 # Framing the Problem <a name="framingtheproblem"></a>
+## Prediction Problem:
+**Type:** Regression
+**Objective:** Predicting the 'sugar' content in food items based on their nutritional information.
+## Response Variable:
+Variable: Sugar content (measured quantitatively)
+Reason for Choice: You chose 'sugar' as the response variable to predict its value based on other nutritional information like calories, total fat, sodium, protein, saturated fat, and carbohydrates. This choice makes sense if the goal is to understand or manage sugar levels in dietary planning, which is a significant consideration in nutrition and health-related fields.
+## Evaluation Metrics:
+Root Mean Square Error (RMSE):
+Chosen Because: RMSE is a standard metric for regression problems. It measures the average magnitude of the errors between predicted and actual values, giving a sense of how far off predictions are. It's particularly useful in your context because it directly relates to the quantity being predicted (sugar content).
+Interpretation: Lower RMSE values are better as they indicate smaller differences between the predicted and actual values.
+R² Score:
+Chosen Because: R² (Coefficient of Determination) is a statistical measure that represents the proportion of the variance for the dependent variable that's explained by the independent variables. It gives an insight into the goodness of fit of the model.
+Interpretation: An R² score close to 1 indicates that the model explains a large portion of the variance in the response variable.
+Cross-Validation Scores:
+Chosen Because: Cross-validation is a robust method for assessing the generalizability of a model. It helps in understanding how the model performs on different subsets of the dataset.
+Interpretation: Consistent and high scores across folds indicate a well-performing and stable model.
 
 # Baseline Model <a name="baselinemodel"></a>
 The baseline model we used is a linear regression model designed to predict the 'sugar' content in food items based on other nutritional information. The model is built using Python's scikit-learn library.
