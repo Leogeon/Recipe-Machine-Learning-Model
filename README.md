@@ -10,11 +10,11 @@
 ## Framing the Problem <a name="framingtheproblem"></a>
 ### Prediction Problem:
 - **Type:** Regression
-- **Objective:** Predicting the 'sugar' content in food items based on their nutritional information.
+- **Objective:** Our objective with this project is to create a model that can accurately predict the sugar content of a recipe given other nutritional facts.
 
 ### Response Variable:
 - **Variable:** Sugar content (measured quantitatively)
-- **Reason for Choice:** We chose 'sugar' as the response variable to predict its value based on other nutritional information like calories, total fat, sodium, protein, saturated fat, and carbohydrates. This choice makes sense if the goal is to understand or manage sugar levels in dietary planning, which is a significant consideration in nutrition and health-related fields.
+- **Reason for Choice:** For our response variable we decided to chose sugar. The reason for this is that sugar is the most important nutritional component and being able to accurately predict the level of sugar in a recipe is very beneficial. From a health and safety standpoint, many people are faced with diabetes, and for such people, knowing the exact sugar content of food can be the difference between life and death. 
   
 ### Evaluation Metrics:
 - **Root Mean Square Error (RMSE):**
